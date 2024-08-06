@@ -50,16 +50,13 @@ except Exception as e:
 
 try:
     carrinho = driver.find_element(By.XPATH, '//a[@class="shopping_cart_link"]')
-    sleep (1)
     carrinho.click()
 
     remover = driver.find_element(By.XPATH, '//button[@id="remove-sauce-labs-bike-light"]')
-    sleep (2)
     remover.click()
     sleep (2)
 
     checkout = driver.find_element(By.XPATH, '//button[@id="checkout"]')
-    sleep (2)
     checkout.click()
     sleep (2)
 
@@ -67,17 +64,21 @@ try:
     name.click()
     name.send_keys('Lia Maria')
     sleep (2)
+
     lastname = driver.find_element(By.XPATH, '//input[@id="last-name"]')
     lastname.click()
     lastname.send_keys('Santos')
     sleep (2)
+
     postcode = driver.find_element(By.XPATH, '//input[@id="postal-code"]')
     postcode.click()
-    postcode.send_keys('13471-200')
+    postcode.send_keys('12345678')
     sleep (2)
+
     continua = driver.find_element(By.XPATH, '//input[@id="continue"]')
     sleep (2)
     continua.click()
+
     final = driver.find_element(By.XPATH, '//button[@id="finish"]')
     sleep (2)
     final.click()    
