@@ -8,6 +8,7 @@ driver = webdriver.Chrome()
 driver.get('https://www.saucedemo.com/')
 sleep (2)
 
+
 try:
     login = driver.find_element(By.XPATH, '/html/body/div/div/div[2]/div[1]/div/div/form/div[1]/input')
     login.send_keys('standard_user')
