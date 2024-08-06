@@ -64,17 +64,14 @@ try:
     sleep (2)
 
     name = driver.find_element(By.XPATH, '//input[@id="first-name"]')
-    sleep (2)
     name.click()
     name.send_keys('Lia Maria')
     sleep (2)
     lastname = driver.find_element(By.XPATH, '//input[@id="last-name"]')
-    sleep (2)
     lastname.click()
     lastname.send_keys('Santos')
     sleep (2)
     postcode = driver.find_element(By.XPATH, '//input[@id="postal-code"]')
-    sleep (2)
     postcode.click()
     postcode.send_keys('13471-200')
     sleep (2)
@@ -89,5 +86,4 @@ except NoSuchElementException:
 except Exception as e:
     print ('Tente novamente mais tarde!', e)
 
-sleep (10)
 input()
