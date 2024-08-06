@@ -1,16 +1,23 @@
+#importando webdriver e By da biblioteca selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+#importando biblioteca time para adicionar uma pausa no nosso codigo
 from time import sleep 
 
+#abrindo o navegador para comecar a automacao, utilizando o webdriver
 driver = webdriver.Chrome()
+#abrindo uma URL
 driver.get('https://www.saucedemo.com/')
+#adicionando uma pausa no codigo
 sleep (2)
 
 
 try:
+    #buscando um elemento utilizando o XPATH
     login = driver.find_element(By.XPATH, '/html/body/div/div/div[2]/div[1]/div/div/form/div[1]/input')
+    #inserindo o valor no campo de username
     login.send_keys('standard_user')
     sleep (2)
     senha = driver.find_element(By.XPATH, '/html/body/div/div/div[2]/div[1]/div/div/form/div[2]/input')
