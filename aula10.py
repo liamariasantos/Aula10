@@ -15,14 +15,18 @@ sleep (2)
 
 
 try:
-    #buscando um elemento utilizando o XPATH
+    #buscando um elemento usuario utilizando o XPATH
     login = driver.find_element(By.XPATH, '/html/body/div/div/div[2]/div[1]/div/div/form/div[1]/input')
     #inserindo o valor no campo de username
     login.send_keys('standard_user')
     sleep (2)
+
+    #buscando um elemento senha utilizando o XPATH
     senha = driver.find_element(By.XPATH, '/html/body/div/div/div[2]/div[1]/div/div/form/div[2]/input')
+    #inserindo o valor no campo de senha
     senha.send_keys('secret_sauce')
     sleep (2)
+    #Clicando no 'enter'
     senha.send_keys(Keys.ENTER)
 except NoSuchElementException:
     print ('Nada foi encontrado!')
@@ -48,32 +52,17 @@ try:
     carrinho = driver.find_element(By.XPATH, '//a[@class="shopping_cart_link"]')
     sleep (1)
     carrinho.click()
-except NoSuchElementException:
-    print ('Nada foi encontrado!')
-except Exception as e:
-    print ('Tente novamente mais tarde!', e)
 
-try:
     remover = driver.find_element(By.XPATH, '//button[@id="remove-sauce-labs-bike-light"]')
     sleep (2)
     remover.click()
     sleep (2)
-except NoSuchElementException:
-    print ('Nada foi encontrado!')
-except Exception as e:
-    print ('Tente novamente mais tarde!', e)
 
-try:
     checkout = driver.find_element(By.XPATH, '//button[@id="checkout"]')
     sleep (2)
     checkout.click()
     sleep (2)
-except NoSuchElementException:
-    print ('Nada foi encontrado!')
-except Exception as e:
-    print ('Tente novamente mais tarde!', e)
 
-try:
     name = driver.find_element(By.XPATH, '//input[@id="first-name"]')
     sleep (2)
     name.click()
